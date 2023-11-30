@@ -1,0 +1,16 @@
+input {
+    border-top: white;
+    border-left: white;
+    border-right: white;
+    border-bottom: 1px solid gray;
+    margin-top: 30px;
+    width: 100%;
+}
+
+label {
+    position: absolute;
+}
+
+select {
+    margin-top: 35px;
+}
