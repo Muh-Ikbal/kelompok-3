@@ -78,10 +78,6 @@ if (isset($_POST['hitung']) && $_POST['hitung'] == 'hitung') {
         </div>
       </div>
     </nav>
-
-    <div class="overlay2">
-      <h1>PESAN TIKET</h1>
-    </div>
   </section>
   <main id="main">
     <section class="container mesan">
