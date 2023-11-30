@@ -3,8 +3,7 @@ include "koneksi.php";
 
 class Ship
 {
-    protected $conn;
-
+    public $conn;
     public $nama_kapal;
     public $muatan;
     public $tujuan;
