@@ -1,2 +1,1 @@
-# kelompok-3
-Muh. afdal ziqri ramadhan
+minimal jangan ubah sembarang lah
