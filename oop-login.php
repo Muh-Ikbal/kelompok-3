@@ -6,10 +6,10 @@ class User
     protected $password;
     public $username;
     public $fullname;
-    public function __construct($password, $username, $fullname)
+    public function __construct($username,$password, $fullname)
     {
-        $this->password = $password;
         $this->username = $username;
+        $this->password = $password;
         $this->fullname = $fullname;
     }
 }
@@ -36,7 +36,7 @@ class Login extends User
     protected $conn;
     public function __construct($conn, $username, $password)
     {
-        parent::__construct($password, $username, '');
+        parent::__construct($username, $password, '');
         $this->conn = $conn;
     }
 
