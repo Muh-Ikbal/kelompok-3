@@ -45,7 +45,7 @@ if (!isset($_SESSION['tickets'])) {
                         $data = mysqli_fetch_array($query);
                         ?>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Log Out</a></li>
+                            <li><a class="dropdown-item" href="logout.php">Log Out</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
