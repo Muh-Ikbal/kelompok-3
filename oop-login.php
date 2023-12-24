@@ -26,9 +26,8 @@ class UserManager extends User
     public function createUser()
     {
         $hashedPassword = password_hash($this->password, PASSWORD_BCRYPT);
-        $queri = $this->conn->prepare("INSERT INTO tb_user (username, password, fullname) VALUES (?, ?, ?)");
-        $queri->bind_param("sss", $this->username, $hashedPassword, $this->fullname);
-        return $queri->execute();
+        $queri = mysqli_query($this->conn, "INSERT INTO tb_user (username, password, fullname) VALUES ('$this->username', '$hashedPassword', '$this->fullname')");
+        return $queri;
     }
 }
 class Login extends User
@@ -42,12 +41,8 @@ class Login extends User
 
     public function loginUser()
     {
-        $queri = $this->conn->prepare("SELECT * FROM tb_user WHERE username = ?");
-        $queri->bind_param("s", $this->username);
-        $queri->execute();
-        $result = $queri->get_result();
-        $userData = $result->fetch_assoc();
-
+        $query = mysqli_query($this->conn,"SELECT * FROM tb_user WHERE username = '$this->username'");
+        $userData = mysqli_fetch_assoc($query);
         if ($userData) {
             if (password_verify($this->password, $userData["password"])) {
                 session_start();
