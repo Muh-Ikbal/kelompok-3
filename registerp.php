@@ -6,8 +6,9 @@ if (isset($_POST['signup']) && $_POST['signup'] == 'Register') {
     $uname = $_POST['uname'];
     $password = $_POST['pass'];
 
-    $userManager = new UserManager($conn, $password, $uname, $fname);
+    $userManager = new UserManager($conn,$uname, $password, $fname);
     $result = $userManager->createUser();
+   
 
     if ($result) {
         echo "<script>window.alert('Selamat, Akun anda berhasil dibuat'); window.location.href='login.php';</script>";

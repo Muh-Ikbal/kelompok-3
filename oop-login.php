@@ -26,7 +26,7 @@ class UserManager extends User
     public function createUser()
     {
         $hashedPassword = password_hash($this->password, PASSWORD_BCRYPT);
-        $queri = mysqli_query($this->conn, "INSERT INTO tb_user (username, password, fullname) VALUES ('$this->username', '$hashedPassword', '$this->fullname')");
+        $queri = mysqli_query($this->conn, "INSERT INTO tb_user (fullname, username, password) VALUES ('$this->fullname','$this->username','$hashedPassword')");
         return $queri;
     }
 }
