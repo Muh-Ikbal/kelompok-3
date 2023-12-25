@@ -1,0 +1,147 @@
+.background {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url("../images/background.jpg") center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .background2 {
+    margin: 0;
+    padding: 0;
+    height: 50vh;
+    background: url("../images/background.jpg") center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .overlay {
+    background: rgba(71, 70, 70, 0.5);
+    backdrop-filter: blur(5px);
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlay2 {
+    background: rgba(71, 70, 70, 0.5);
+    backdrop-filter: blur(5px);
+    height: 50vh;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlay h1 {
+    font-size: 3em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .overlay2 h1 {
+    font-size: 3em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .overlay p {
+    font-size: 1.5em;
+    color: #fff;
+  }
+  
+  .overlay2 p {
+    font-size: 1.5em;
+    color: #fff;
+  }
+  
+  
+  .tiket {
+    margin-bottom: 10px;
+  }
+  
+  .tiket .container .row .col-md-4:not(:first-child) {
+    margin: 20px;
+  }
+  
+  .navbar {
+    background-color: transparent !important;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar.scrolled {
+    background-color: #007bff !important;
+  }
+  .booking {
+    margin-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 30px 0;
+   }
+   
+   footer h4 {
+    color: #ffffff;
+    margin-bottom: 20px;
+   }
+   
+   footer ul {
+    list-style: none;
+    padding: 0;
+   }
+   
+   footer ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+   }
+   
+   footer ul li a:hover {
+    color: #9fd161;
+   }
+   
+   .contact-info {
+    margin-bottom: 20px;
+   }
+   
+   .contact-info p {
+    margin-bottom: 5px;
+   }
+   
+   .contact-info i {
+    margin-right: 5px;
+   }
+  
+  section.mesan {
+    margin-top: 50px;
+  }
+  
+  .mesan form {
+    background-color: #d8d8d8;
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .mesan h6 {
+    font-family: "Roboto", sans-serif;
+    color: #343a40;
+    font-weight: bold;
+    text-transform: uppercase;
+  }

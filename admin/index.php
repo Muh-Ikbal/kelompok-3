@@ -25,7 +25,7 @@ include("session.php");
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end">
-          <li><a class="dropdown-item text-light" href="#">Log Out</a></li>
+          <li><a class="dropdown-item text-light" href="logout.php">Log Out</a></li>
         </ul>
 
       </div>
@@ -34,7 +34,7 @@ include("session.php");
   <!-- navbar end -->
   <!-- content start -->
   <div class="img align-middle text-center">
-    <img src="gambar/Modern Initial MB Logo.png" alt="gambar" style="height: 300px;">
+    <img src="gambar/Modern Initial MB Logo.png" alt="gambar" style="width: 150px;">
   </div>
   <figure class="text-center bordered mt-1">
     <blockquote class="blockquote">
@@ -49,24 +49,15 @@ include("session.php");
     <table style="margin: 0 auto;">
       <tr class="mb-2" style="margin-bottom: 5px;">
         <td>
-          <a href="jadwal.php" type="button" class="btn btn-primary form-control me-5" style="padding: 50px;margin-right: 20px;">Jenis Kapal
+          <a href="jadwal.php" type="button" class="btn btn-primary form-control me-5" style="padding: 50px;margin-right: 20px;">Tentang Kapal
             <br>
             <span style="font-size: 8px;">Open In New Tab</span></a>
         </td>
         <td>
-          <button type="button" class="btn btn-success form-control" style="padding: 50px;">Rute <br>
-            <span style="font-size: 8px;">Open In New Tab</span></button>
+          <a href="reservasi.php" type="button" class="btn btn-warning form-control" style="padding: 50px;color: aliceblue;">Reservation <br>
+            <span style="font-size: 8px;">Open In New Tab</span></a>
         </td>
-      </tr>
-      <tr style="margin-top: 100px;">
-        <td>
-          <button type="button" class="btn btn-danger form-control" style="padding: 50px;">Transportation <br>
-            <span style="font-size: 8px;">Open In New Tab</span></button>
-        </td>
-        <td>
-          <button type="button" class="btn btn-warning form-control" style="padding: 50px;color: aliceblue;">Reservation <br>
-            <span style="font-size: 8px;">Open In New Tab</span></button>
-        </td>
+
       </tr>
       <tr>
         <td colspan="2">
