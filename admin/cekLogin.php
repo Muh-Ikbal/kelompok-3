@@ -1,20 +1,36 @@
 <?php
 include("koneksi.php");
+class Admin
+{
+    private $conn;
+    public $username;
+    private $password;
+    protected function __construct($conn, $username, $password)
+    {
+        $this->conn = $conn;
+        $this->username = $username;
+        $this->password = $password;
+    }
+    public function adminLogin()
+    {
+        $sql = mysqli_query($this->conn, "SELECT * FROM `admin` WHERE username = '$this->username' ");
+        $adminData = mysqli_fetch_assoc($sql);
+        if ($adminData) {
+            if ($this->password == $adminData['password']) {
+                session_start();
+                $_SESSION["admin"] = $adminData['username'];
+                header("location:index.php");
+            } else {
+                header("location:login.php?pesan=password salah");
+            }
+        } else {
+            header("location:login.php?pesan=username salah");
+        }
+    }
+}
 if (isset($_POST['signin'])) {
     $yourname = $_POST['your_name'];
     $yourpass = $_POST['your_pass'];
-    $sql = mysqli_query($conn, "SELECT * FROM `admin` WHERE username='$yourname'");
-    $data = mysqli_fetch_array($sql);
-    $ai = mysqli_num_rows($sql);
-    if ($ai >= 0) {
-        if ($yourpass == $data["password"]) {
-            session_start();
-            $_SESSION["admin"] = $yourname;
-            header("location:index.php");
-        } else {
-            header("location:login.php?pesan=password salah");
-        }
-    } else {
-        header("location:login.php?pesan=username salah");
-    }
+    $login = new Admin($conn,$yourname,$yourpass);
+    $login -> adminLogin();
 }
