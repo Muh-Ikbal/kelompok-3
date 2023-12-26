@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <?php
-include "../admin/koneksi.php";
-include "../admin/session.php";
+include "koneksi.php";
+include "session.php";
 $sql = mysqli_query($conn, "SELECT * FROM tb_tiket");
 $data = mysqli_fetch_array($sql);
 if ($data['id_tiket'] == "") {
