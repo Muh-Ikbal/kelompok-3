@@ -46,7 +46,7 @@ if (isset($_SESSION["username"])) {
                             </div>
                         <?php } ?>
                         <!-- alert end -->
-                        <h2 class="form-title">Sign up</h2>
+                        <h2 class="form-title">Login</h2>
                         <form action="loginp.php" method="post" class="register-form" id="login-form">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
