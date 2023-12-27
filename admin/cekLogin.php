@@ -4,8 +4,8 @@ class Admin
 {
     private $conn;
     public $username;
-    private $password;
-    protected function __construct($conn, $username, $password)
+    protected $password;
+    public function __construct($conn, $username, $password)
     {
         $this->conn = $conn;
         $this->username = $username;
