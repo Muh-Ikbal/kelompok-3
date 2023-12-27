@@ -76,7 +76,7 @@ class JadwalManager extends Ship
     }
 }
 
-$jadwalManager = new JadwalManager($conn);
+$jadwalManager = new JadwalManager($conn); // ini object
 
 if (isset($_POST['btnProses'])) {
     $nama_kapal = $_POST["nama_kapal"];
