@@ -16,6 +16,7 @@ class User
 
 class UserManager extends User
 {
+    // encapsulasi
     protected $conn;
     public function __construct($conn, $password, $username, $fullname)
     {
@@ -30,6 +31,8 @@ class UserManager extends User
         return $queri;
     }
 }
+
+// extends itu inhweitance
 class Login extends User
 {
     protected $conn;
