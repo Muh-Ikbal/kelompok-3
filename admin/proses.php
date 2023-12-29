@@ -1,6 +1,10 @@
 <?php
 include "koneksi.php";
 
+
+// MUH. IKBAL _E1E122066
+//  untuk overridenya tidak ada. alasan override tidak ada karena method yang dibuat memiliki 
+
 class Ship
 {
     public $conn;
@@ -27,17 +31,6 @@ class Ship
 
 class JadwalManager extends Ship
 {
-    public function tambahJadwal()
-    {
-        $gambar_tmp = $this->gambar["tmp_name"];
-        move_uploaded_file($gambar_tmp, "gambar/" . $this->gambar["name"]);
-
-        $gambar = $this->gambar['name'];
-        $query = "INSERT INTO tb_jadwal (`id_kapal`, `nama_kapal`, `muatan`, `tujuan`, `harga`, `kapal`) VALUES (NULL, '$this->nama_kapal', '$this->muatan', '$this->tujuan', '$this->harga', '$gambar')";
-        $sql = mysqli_query($this->conn, $query);
-
-        return $sql;
-    }
 
     public function updateJadwal($id_kapal)
     {
@@ -76,7 +69,30 @@ class JadwalManager extends Ship
     }
 }
 
+// polimorphism. kenapa? karena interface membuat method baru yang kosong dan di implementasikan kedalam kelas tambah jadwal dengan bentuk yang berbeda atau menambahkan isinya
+interface TambahData{
+     function tambahJadwal();
+    //contoh overide. kenapa disebut overide karena nama methodnya digunakan kembali didalam kelass lain
+
+}
+// class baru tambah Baranf
+class TambahJadwal extends Ship implements TambahData {
+    // encapsulation disini yaitu visibility method tambah jadwal yang saya buat ke public agar dapat diakses dimana pun
+    public function tambahJadwal()
+    {
+        $gambar_tmp = $this->gambar["tmp_name"];
+        move_uploaded_file($gambar_tmp, "gambar/" . $this->gambar["name"]);
+
+        $gambar = $this->gambar['name'];
+        $query = "INSERT INTO tb_jadwal (`id_kapal`, `nama_kapal`, `muatan`, `tujuan`, `harga`, `kapal`) VALUES (NULL, '$this->nama_kapal', '$this->muatan', '$this->tujuan', '$this->harga', '$gambar')";
+        $sql = mysqli_query($this->conn, $query);
+
+        return $sql;
+    }
+}
+
 $jadwalManager = new JadwalManager($conn); // ini object
+$tambahJadwal = new TambahJadwal($conn);
 
 if (isset($_POST['btnProses'])) {
     $nama_kapal = $_POST["nama_kapal"];
@@ -86,7 +102,7 @@ if (isset($_POST['btnProses'])) {
     $jadwalManager->setAttributes($nama_kapal, $muatan, $tujuan, $harga, $_FILES["gambar"]);
 
     if ($_POST['btnProses'] == 'tambah') {
-        $result = $jadwalManager->tambahJadwal();
+        $result = $tambahjadwal->tambahJadwal();
     } else {
         $result = $jadwalManager->updateJadwal($_POST['id_kapal']);
     }
