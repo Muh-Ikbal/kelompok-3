@@ -100,9 +100,10 @@ if (isset($_POST['btnProses'])) {
     $tujuan = $_POST["tujuan"];
     $harga = $_POST["harga"];
     $jadwalManager->setAttributes($nama_kapal, $muatan, $tujuan, $harga, $_FILES["gambar"]);
+    $tambahJadwal->setAttributes($nama_kapal, $muatan, $tujuan, $harga, $_FILES["gambar"]);
 
     if ($_POST['btnProses'] == 'tambah') {
-        $result = $tambahjadwal->tambahJadwal();
+        $result = $tambahJadwal->tambahJadwal();
     } else {
         $result = $jadwalManager->updateJadwal($_POST['id_kapal']);
     }
